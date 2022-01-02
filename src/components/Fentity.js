@@ -4,6 +4,11 @@ import '../styles/fentity.css'
 
 class Fentity extends Component {
     render() {
+
+        let fentitiesCategory =  this.props.match.params.fentities
+        let name = this.props.match.params.name
+        const fentity = this.props.state[fentitiesCategory].filter(f => f.name.toLowerCase() === name.toLowerCase())[0]
+        console.log(fentity)
         return (
             <div id="creature-container">
                 <h1>{fentity.name}</h1>
